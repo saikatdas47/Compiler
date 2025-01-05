@@ -1,0 +1,1 @@
+#include <stdio.h> int main(void) { int a = 9; printf("Hello\n"); printf("vhooooy pao madrid, vhoy pao.."); return 0; } 

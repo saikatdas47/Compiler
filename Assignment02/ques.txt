@@ -1,0 +1,32 @@
+
+
+IV. ASSIGNMENT #2:
+Suppose, we have a C source program scanned and filtered as it was done in Session 1. We now take
+that modified file as input, and separate the lexemes first. We further recognize and mark the
+lexemes as different types of tokens like keywords, identifiers, operators, separators, parenthesis,
+numbers, etc.
+
+Sample Input:
+char c; int x1, x_2; float y1, y2; x1=5; x_2= 10; y1=2.5+x1*45; y2=100.o5-x_2/3; if(y1<=y2) c='y'; else
+c='n';
+
+Step 1: Lexemes are separated. Mark that two-character relational operators are also
+distinguished beside separators, one-character operators, parenthesis, number constants and
+alphanumeric strings with or without underscore.
+
+Step 2: Lexemes are categorized under the categories kw for keyword, id for identifier, etc. Some
+may be labeled unkn (unknown).
+char c ; int x1 , x_2 ; float y1 , y2 ; x1 = 5 ; x_2 = 10 ; y1 = 2.5 + x1 * 45 ; y2 = 100.o5 - x_2 /
+3 ; if ( y1 <= y2 ) c = ' y ' ; else c = ' n ' ;
+
+[kw char] [id c] [sep ;] [kw int] [id x1] [sep ,] [id x_2] [sep ;] [kw float] [id y1] [sep ,] [id y2]
+[sep ;] [id x1] [op =] [num 5] [sep ;] [id x_2] [op =] [num 10] [sep ;] [id y1] [op =] [num 2.5]
+[op +] [id x1] [op *] [num 45] [sep ;] [id y2] [op =] [unkn 100.o5] [op -] [id x_2] [op /] [num
+3] [sep ;] [kw if] [par (] [id y1] [op <=] [id y2] [par )] [id c] [op =] [sep '] [id y] [sep '] [sep ;]
+[kw else] [id c] [op =] [sep '] [id n] [sep '] [sep ;]
+
+• Note that we need to request for generation of an error message for [unkn 100.o5]. And we will
+further modify some of the tokens (categorized/ recognized lexemes) for symbol table entry. For
+example, we may replace all [id c] in the same scope with the token, say, [id 1], all [id x1] with [id
+2], and so on. Here, 1 and 2 refer to entry pointer (record number) in the Symbol Table.
+
