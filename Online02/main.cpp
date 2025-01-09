@@ -139,6 +139,11 @@ int main()
 
    
 
+
+//questions: Separate array for lexemes which contain only keywords then letter_letterLetterDigitDigit then valid identifiers
+
+
+
     // Separate array for lexemes which contain only identifiers
     string a[maxLexemes];
     int idCount = 0;
