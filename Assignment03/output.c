@@ -1,0 +1,1 @@
+#include <stdio.h> float x1 = 35; double f1(int x) { double z; z = 1.0; return z; } int main(void) { int a = 9; int b = 10; printf("Hello\n"); int n1; double z; n1 = 25; z = f1(n1); printf("vhooooy pao madrid, vhoy pao.."); return 0; } 
